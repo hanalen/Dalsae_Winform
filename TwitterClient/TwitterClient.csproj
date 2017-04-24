@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D7D8732-6E55-49DF-8712-305D48573CBC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TwitterClient</RootNamespace>
+    <AssemblyName>TwitterClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>twitter-128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4688CD944F00B0A12B08799EAAA8892EF5A4BE1F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>switterKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientJsonClass.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="FlowPanelManager.cs" />
+    <Compile Include="FlowPanelManager_Inner.cs" />
+    <Compile Include="Forms\FavoriteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FavoriteForm.Designer.cs">
+      <DependentUpon>FavoriteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadControl.Designer.cs">
+      <DependentUpon>LoadControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm_Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm_KeyDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PanelButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PanelButtonControl.Designer.cs">
+      <DependentUpon>PanelButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generate.cs" />
+    <Compile Include="Forms\HotKeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HotKeyForm.Designer.cs">
+      <DependentUpon>HotKeyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MaidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MaidForm.Designer.cs">
+      <DependentUpon>MaidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionForm.Designer.cs">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PinForm.Designer.cs">
+      <DependentUpon>PinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InjangManager.cs" />
+    <Compile Include="OAuth.cs" />
+    <Compile Include="Option.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TweetAPI.cs" />
+    <Compile Include="Forms\TweetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TweetControl.Designer.cs">
+      <DependentUpon>TweetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TwitterClientManager.cs" />
+    <Compile Include="TwitterClientManager_APICall.cs" />
+    <Compile Include="TwitterClientManager_Response.cs" />
+    <Compile Include="Web.cs" />
+    <EmbeddedResource Include="Forms\FavoriteForm.resx">
+      <DependentUpon>FavoriteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HotKeyForm.resx">
+      <DependentUpon>HotKeyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadControl.resx">
+      <DependentUpon>LoadControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaidForm.resx">
+      <DependentUpon>MaidForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionForm.resx">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PanelButtonControl.resx">
+      <DependentUpon>PanelButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PinForm.resx">
+      <DependentUpon>PinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\TweetControl.resx">
+      <DependentUpon>TweetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\gongSik_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\LockPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\twitter-128.ico" />
+    <None Include="Icons\dm_icon.png" />
+    <None Include="Icons\home_icon.PNG" />
+    <None Include="Icons\noti_icon.png" />
+    <None Include="Icons\gif.png" />
+    <Content Include="twitter-128.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
